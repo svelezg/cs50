@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contributions
+{% endblock %}
+
+{% block main %}
+    <div class="col-sm-5">
+      <div class="row">
+          <h1> {{ total["count"] }} Contributions</h1>
+      </div>
+      <div class="row">
+        <table class="table table-sm table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Genera</th>
+              <th scope="col">Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for play in plays %}
+            <tr>
+              <td>{{ play["genera"] }}</td>
+              <td>{{ play["id"] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+{% endblock %}

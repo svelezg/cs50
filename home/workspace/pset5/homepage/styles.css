@@ -1,0 +1,48 @@
+body
+{
+    background-color: #92a8d1;
+}
+
+header
+{
+    font-size: large;
+}
+
+.dis-1
+{
+  font-size: 500%;
+  text-align: center;
+}
+
+footer
+{
+    padding-top:25px;
+    font-size: small;
+    font-weight: 200;
+    text-align: center;
+    color: white;
+    background-color: #374048;
+    border: 1px solid grey;
+    padding-bottom:25px;
+}
+
+p
+{
+    text-align: justify;
+}
+
+ul
+{
+    font-weight: 100;
+}
+
+td
+{
+    text-align: center;
+}
+
+th
+{
+    text-align: center;
+}
+

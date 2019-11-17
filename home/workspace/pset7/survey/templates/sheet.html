@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Sheet</h1>
+
+    <table class="table table-sm table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Gender</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Degree</th>
+        </tr>
+      </thead>
+      <tbody> {% for register in registers %}
+        <tr>
+          <td>{{ register["gender"] }}</td>
+          <td>{{ register["name"] }}</td>
+          <td>{{ register["lastname"] }}</td>
+          <td>{{ register["email"] }}</td>
+          <td>{{ register["degree"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}

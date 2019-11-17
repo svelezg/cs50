@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Score
+{% endblock %}
+
+{% block main %}
+  <div class="col-sm-8 ">
+    <div class="row">
+      <div class="col">
+        <h1> Your Score</h1>
+      </div>
+      <div class="col">
+        <h2 align="right">Points: {{points}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Genera</th>
+            <th scope="col">Answer</th>
+            <th scope="col">Points</th>
+          </tr>
+        </thead>
+        <tbody>{% for play in plays %}
+          <tr>
+            <td>{{ play["date"] }}</td>
+            <td>{{ play["genera"] }}</td>
+            <td>{{ play["type"] }}</td>
+            <td>{{ play["points"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

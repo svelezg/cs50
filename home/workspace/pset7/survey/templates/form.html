@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="Ms." name="gender" id="Ms">
+            <label class="form-check-label" for="Ms">Ms.</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="Mr." name="gender" id="Mr">
+            <label class="form-check-label" for="Mr">Mr.</label>
+          <div class="form-check form-check-inline">
+          </div>
+            <input type="radio" class="form-check-input" value="Not specified" name="gender" id="Not" checked>
+            <label class="form-check-label" for="Not">Not specified</label>
+          </div>
+          <div class="form-row">
+          <div class="form-group col-6">
+            <label for="lastname">Last name</label>
+            <input type="text" autocomplete="off" autofocus class="form-control" id="lastname" name="lastname" placeholder="Last name">
+            <small class="form-text text-muted">Fill in your last name.</small>
+          </div>
+          <div class="form-group col-6">
+            <label for="name">Name</label>
+            <input type="text" autocomplete="off" class="form-control" id="name" name="name" placeholder="Name">
+            <small id="nameHelp" class="form-text text-muted">Fill in your name.</small>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+         <div>
+            <label for="degree">Highest academic degree :</label>
+            <select name="degree" id="degree">
+                <option disabled selected value="">Select degree</option>
+                <option value="Associate">Associate </option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Master">Master</option>
+                <option value="PhD">PhD</option>
+            </select>
+        </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" value="Register" type="submit" onclick="check()">Submit</button>
+
+    </form>
+
+
+    <script>
+
+        document.querySelector('form').onsubmit = function() {
+                if (!document.querySelector("#lastname").value) {
+                    alert('You must provide your last name!');
+                    return false;
+                }
+                else if (!document.querySelector("#name").value) {
+                    alert('You must provide your name!');
+                    return false;
+                }
+                else if (!document.querySelector("#email").value) {
+                    alert('You must provide your email!');
+                    return false;
+                }
+                else if (!document.querySelector("select").value) {
+                    alert('You must provide your academic degree!');
+                    return false;
+                }
+                return true;
+        };
+
+    </script>
+
+{% endblock %}

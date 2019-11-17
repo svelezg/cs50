@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <ul class="list-group">
+      <li class="list-group-item">Symbol: {{symbol}}</li>
+      <li class="list-group-item">Security: {{name}}</li>
+      <li class="list-group-item">Current price: {{price | usd}}</li>
+    </ul>
+{% endblock %}

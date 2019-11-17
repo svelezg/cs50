@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h3>Investments for {{name}}</h3>
+    <ul class="list-group">
+        <li class="list-group-item">Cash balance: {{balance | usd}}</li>
+    </ul>
+    <form action="/cash" method="post">
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label for="amount">Especify amount:</label>
+                    <input autofocus class="form-control" id="amount" name="amount" placeholder="Amount" type="number" step="0.01" min="0">
+                </div>
+                <div class="col">
+                    <label for="transaction">Especify transaction type:</label>
+                    <select name="transaction" id="transaction">
+                        <option disabled selected value="">Transaction</option>
+                        <option value="cash_out">Cash out </option>
+                        <option value="invest">Invest</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

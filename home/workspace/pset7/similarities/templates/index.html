@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="form-group">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+
+            <input autocomplete="off" autofocus name="file1" placeholder="file1" type="file">       <br></br>
+
+            <input autocomplete="off" name="file2" placeholder="file2" type="file">     <br></br>
+
+            <label for="algorithm">Algorithm type:</label>
+            <select name="algorithm">
+                <option disabled selected value="">Select algorithm</option>
+                <option value="lines">lines</option>
+                <option value="sentences">sentences</option>
+                <option value="substrings">substrings</option>
+            </select>
+
+            <input min="1" name="length" placeholder="length n" type="number">       <br></br>
+
+                <button class="btn btn-primary" type="submit">Compare</button>
+
+        </form>
+    </div>
+
+{% endblock %}
